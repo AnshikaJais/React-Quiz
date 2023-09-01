@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FinishScore = ({points, maxPossiblePoints, highscore}) => {
+const FinishScore = ({points, maxPossiblePoints, highscore, dispatch}) => {
     const per = (points / maxPossiblePoints) * 100;
     return (
         <>
@@ -9,6 +9,7 @@ const FinishScore = ({points, maxPossiblePoints, highscore}) => {
                 &nbsp; ({Math.ceil(per)}%)
             </p>
             <p className="highscore">HighScore: {highscore} points</p>
+            <button className="btn btn-ui" onClick={() => dispatch({type: "restart"}) }>Restart</button>
         </>
     );
 };
